@@ -4,7 +4,7 @@ configatron.configure_from_hash(
 
   :community_name => "Community",
 
-  :community_tagline => "CommunityEngine Rocks!",
+  :community_tagline => "Find It",
   :community_description =>  "The Best Place for People Who Love Communities",
   :support_email =>  "support@community.com",
   :meta_description => 'A description of your community for use in META tags.',
@@ -59,9 +59,15 @@ configatron.configure_from_hash(
     :missing_thumb => '/assets/icon_missing_thumb.gif',
     :missing_medium => "/assets/icon_missing_medium.gif",
     :paperclip_options => {
-      :default_url => "",
-      :path => "#{Rails.root}/public/system/:attachment/:id/:style/:filename",
-      :url => "/system/:attachment/:id/:style/:filename",
+      # :default_url => "",
+      # :path => "#{Rails.root}/public/system/:attachment/:id/:style/:filename",
+      # :url => "/system/:attachment/:id/:style/:filename",
+      :s3_protocol=> "https",
+      :url=>":s3_domain_url",
+
+      :path => ":attachment/:id_:style.:extension",
+
+      :default_url=> ":attachment/:id_:style.:extension",
       :styles => {
         :thumb => {
           :geometry => "100x100#",
