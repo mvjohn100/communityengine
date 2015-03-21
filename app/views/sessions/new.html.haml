@@ -1,13 +1,13 @@
 -@page_title=:log_in_to_site.l(:site => configatron.community_name)
-=render :partial => 'shared/login_sidebar'
--if configatron.auth_providers.to_hash.keys.any?      
-  -widget do
-    %ul.list-unstyled
-      %h4
-        .small= t 'sessions.new.omniauth.header'
-      -configatron.auth_providers.to_hash.keys.each do |provider|
-        -alt = t('sessions.new.omniauth.button_alt', :provider => provider)
-        %li= link_to(image_tag("auth/#{provider.to_s}_64.png", :alt => alt), "/auth/#{provider.to_s}", :title => alt)
+// =render :partial => 'shared/login_sidebar'
+// -if configatron.auth_providers.to_hash.keys.any?      
+//   -widget do
+//     %ul.list-unstyled
+//       %h4
+//         .small= t 'sessions.new.omniauth.header'
+//       -configatron.auth_providers.to_hash.keys.each do |provider|
+//         -alt = t('sessions.new.omniauth.button_alt', :provider => provider)
+//         %li= link_to(image_tag("auth/#{provider.to_s}_64.png", :alt => alt), "/auth/#{provider.to_s}", :title => alt)
 
 %h3
 = bootstrap_form_tag :url => sessions_path, :layout => :horizontal do |f|
